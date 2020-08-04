@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* login page css */
+#login{ width: 470px; margin: 5% auto; }
+.modal-header{border-bottom: none}
+/*charities*/
+textarea#exampleTextArea { height: 90px;}
+/*header right side dropdown*/
+.dropdown-menu {
+  left: -125px !important;
+  cursor: pointer;
+}
+/*header file dropdown*/
+.dropdown-item.active, .dropdown-item:active{
+  color: #3B7CC2 !important;
+  font-weight: 500 !important;
+  background-color: #fff !important;
+}
+b, strong {
+    font-weight: bold;
+}
+
+/*story input errors*/
+.inputerrors {
+  border: 1px solid rgb(202, 57, 56) !important
+}
+
+/*input tags start css*/
+.tags-input {	display: flex;align-items: flex-start;flex-wrap: wrap;min-height: 40px;	padding: 0 8px; background-color: #fff;
+	border: 1px solid rgb(214, 216, 218);	border-radius: 6px;  }
+.tags-input input {	flex: 1;border: none;	height: 38px;	font-size: 14px;padding: 1px 0 0 0;  }
+#tags {	display: flex;	flex-wrap: wrap;	padding: 0;	margin: 4px 0 0 0;}
+.tag {	width: auto;	height: 28px;	display: flex;	align-items: center;	justify-content: center;	color: #fff;
+	padding: 0 8px;	font-size: 14px;	list-style: none;	border-radius: 10px;	margin: 2px 8px 6px 0;	background:#0096fb;}
+/* .tag-title {margin-top: 0px;} */
+.tag-close-icon {	display: block;	width: 16px; height: 16px;	line-height: 14px; text-align: center;font-size: 14px;
+	margin-left: 8px;		color:#0096fb;	border-radius: 50%;	background: #fff;	cursor: pointer;  }
+@media screen and (max-width: 567px) {
+	.tags-input {
+		width: calc(100vw - 32px);
+	}
+}
+/*input tags end css*/

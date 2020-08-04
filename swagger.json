@@ -1,0 +1,3063 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Swagger Doc For Wisekid App",
+    "version": "1.0.0",
+    "title": "Swagger Wisekid"
+  },
+  "tags": [
+    {
+      "name": "User",
+      "description": "User Module",
+      "externalDocs": {}
+    },
+    {
+      "name": "Story",
+      "description": "Story Module",
+      "externalDocs": {}
+    },
+    {
+      "name": "Faq",
+      "description": "Faq Module",
+      "externalDocs": {}
+    }
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Add a new user to the db",
+        "description": "",
+        "operationId": "signup",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Signup"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Signup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/checkEmail":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Check email uniqueness",
+        "description": "Check Email Uniqueness",
+        "operationId": "checkEmail",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckEmail"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckEmail"
+              }
+            }
+          },
+          "description": "CheckEmail",
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login User",
+        "description": "Login",
+        "operationId": "login",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          },
+          "description": "Login",
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/verifyOtp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Otp Verification",
+        "description": "Otp Verification",
+        "operationId": "verifyOtp",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtp"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtp"
+              }
+            }
+          },
+          "description": "Otp Verification",
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/firstLaunch":{
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "First Launch",
+        "description": "First Launch",
+        "operationId": "firstLaunch",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          
+        },
+        "responses": {}
+      }
+    },
+    "/termsAndConditions":{
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Terms and Conditions",
+        "description": "Terms and Conditions",
+        "operationId": "termsAndConditions",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          
+        },
+        "responses": {}
+      }
+    },
+    "/forgotPassword":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Forgot Password",
+        "description": "Forgot Password",
+        "operationId": "forgotPassword",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPassword"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPassword"
+              }
+            }
+          },
+          "description": "Forgot Password",
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/resetPassword":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Reset Password",
+        "description": "Reset Password",
+        "operationId": "resetPassword",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPassword"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPassword"
+              }
+            }
+          },
+          "description": "Reset Password",
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/contactUs":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Contact Us",
+        "description": "Contact Us",
+        "operationId": "ContactUs",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contactUs"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/contactUs"
+              }
+            }
+          },
+          "description": "",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/changePassword":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change Password",
+        "description": "Change Password",
+        "operationId": "changePassword",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            }
+          },
+          "description": "Change Password",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/selectProfile":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Select Profile",
+        "description": "Select Profile",
+        "operationId": "selectProfile",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectProfile"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectProfile"
+              }
+            }
+          },
+          "description": "Select Profile",
+          "required": true
+        },
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/addProfile":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Add Profile",
+        "description": "Add Profile",
+        "operationId": "addProfile",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddProfile"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddProfile"
+              }
+            }
+          },
+          "description": "Add Profile",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/editProfile":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Edit Profile",
+        "description": "Edit Profile Parent",
+        "operationId": "editProfile",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/editProfile"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/editProfile"
+              }
+            }
+          },
+          "description": "Edit Profile",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/changeNotificationEnrolled": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change Notfication",
+        "description": "Change Notfication",
+        "operationId": "changeNotfication",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/audioSetting":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change Audio Mode Setting",
+        "description": "Change Audio Mode Setting",
+        "operationId": "changeAudio",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeAudio"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeAudio"
+              }
+            }
+          },
+          "description": "Change Audio",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Logout User",
+        "description": "Logout User",
+        "operationId": "logoutuser",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/home":{
+      "get": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Catalogue",
+        "description": "Catalogue",
+        "operationId": "Catalogue",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storyRead":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Read",
+        "description": "Story Read",
+        "operationId": "storyRead",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/storyRead"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/storyRead"
+              }
+            }
+          },
+          "description": "Story Read",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/removeStory":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Remove",
+        "description": "Story Remove",
+        "operationId": "storyRemove",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/storyRead"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/storyRead"
+              }
+            }
+          },
+          "description": "Story Read",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storyFavourite":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Favourite",
+        "description": "Story Favourite",
+        "operationId": "storyFavourite",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/storyFavourite"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/storyFavourite"
+              }
+            }
+          },
+          "description": "Story Favourite",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storyDetail":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Detail",
+        "description": "Story Detail",
+        "operationId": "storyDetail",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/storyDetail"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/storyDetail"
+              }
+            }
+          },
+          "description": "Story Detail",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/preSearch":{
+      "get": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Pre Search",
+        "description": "Pre Search",
+        "operationId": "preSearch",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {},
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storiesByProfile":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Will get stories which any profile read",
+        "description": "Will get stories which any profile read",
+        "operationId": "profileId",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoriesByProfile"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/StoriesByProfile"
+              }
+            }
+          },
+          "description": "Story Detail",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/search":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story",
+        "description": "Story",
+        "operationId": "story",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Search"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Search"
+              }
+            }
+          },
+          "description": "Story Detail",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storyLike":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Like",
+        "description": "Story Like",
+        "operationId": "storyLike",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryLike"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryLike"
+              }
+            }
+          },
+          "description": "Story Like",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/storyComment":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Story Comment",
+        "description": "Story Comment",
+        "operationId": "storyLike",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryComment"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryComment"
+              }
+            }
+          },
+          "description": "Story Comment",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/completeStory":{
+      "post": {
+        "tags": [
+          "Story"
+        ],
+        "summary": "Complete Story",
+        "description": "Complete Story",
+        "operationId": "completeStory",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryPoints"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/StoryPoints"
+              }
+            }
+          },
+          "description": "Complete Story",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/faq": {
+      "get": {
+        "tags": [
+          "Faq"
+        ],
+        "summary": "Faq Listing",
+        "description": "Faq Listing",
+        "operationId": "faqListing",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    },
+    "/feedback":{
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Post Feedback",
+        "description": "Post Feedback",
+        "operationId": "postFeedback",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "header",
+            "description": "app_id",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "os_type",
+            "in": "header",
+            "description": "0-ios,1-android",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "os_version",
+            "in": "header",
+            "description": "os_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "device_model",
+            "in": "header",
+            "description": "device_model",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "device_token",
+            "in": "header",
+            "description": "device_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_session_token",
+            "in": "header",
+            "description": "app_session_token",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "description": "app_version",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "locale",
+            "in": "header",
+            "description": "locale",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            }
+          },
+          "description": "Post Feedback",
+          "required": true
+        },
+        "responses": {},
+        "security":[
+          {
+            "bearerAuth":[]
+          }
+        ]
+      }
+    }
+  },
+  
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://54.90.62.46:4800/api/v1"
+    },
+    {
+      "url": "http://localhost:4800/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "Signup": {
+        "type": "object",
+        "required": ["name","email","password"],
+        "properties": {
+          "name":{
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password":{
+            "type": "string"
+          },
+          "terms_version_id":{
+            "type": "integer"
+          },
+          "charity_id":{
+            "type": "array",
+            "xml": {
+              "name": "id's",
+              "wrapped": true
+            },
+            "items": {
+              "type": "integer"
+            }
+          },
+          "childProfile":{
+            "type": "array",
+            "xml": {
+              "name": "tag",
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/childProfileBody"
+            }
+          }
+        }
+      },
+      "childProfileBody":{
+        "type": "object",
+        "properties": {
+          "avatar_id":{
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          }
+        }  
+      },
+      "charityBody":{
+        "type": "object",
+        "properties": {
+          "id":{
+            "type": "integer"
+          }
+        } 
+      },
+      "CheckEmail":{
+        "type": "object",
+        "properties": {
+          "email":{
+            "type": "string"
+          }
+        } 
+      },
+      "ChangeAudio":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type": "string"
+          }
+        }
+      },
+      "Login":{
+        "type": "object",
+        "properties": {
+          "email":{
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }  
+      },
+      "Feedback":{
+        "type": "object",
+        "properties": {
+          "message":{
+            "type": "string"
+          }
+        }
+      },
+      "StoriesByProfile":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type": "integer"
+          }
+        }
+      },
+      "VerifyOtp":{
+        "type": "object",
+        "properties": {
+          "public_id":{
+            "type": "string"
+          },
+          "otp": {
+            "type": "string"
+          }
+        }
+      },
+      "ForgotPassword":{
+        "type": "object",
+        "properties": {
+          "email":{
+            "type": "string"
+          }
+        }
+      },
+      "ResetPassword":{
+        "type": "object",
+        "properties": {
+          "public_id":{
+            "type": "string"
+          },
+          "password":{
+            "type": "string"
+          },
+          "token":{
+            "type": "string"
+          }
+        }
+      },
+      "contactUs":{
+        "type": "object",
+        "properties": {
+          "subject":{
+            "type": "string"
+          },
+          "message":{
+            "type": "string"
+          }
+        }
+      },
+      "ChangePassword":{
+        "type": "object",
+        "properties": {
+          "old_password":{
+            "type": "string"
+          },
+          "new_password":{
+            "type": "string"
+          }
+        }
+      },
+      "SelectProfile":{
+        "type": "object",
+        "properties": {
+          "password":{
+            "type": "string"
+          }
+        }
+      },
+      "AddProfile":{
+        "type": "object",
+        "properties": {
+          "userProfiles":{
+            "type": "array",
+            "xml": {
+              "name": "tag",
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/addProfileBody"
+            }
+          }
+        }
+      },
+      "addProfileBody":{
+        "type": "object",
+        "properties": {
+          "id":{
+            "type":"integer"
+          },
+          "avatar_id":{
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          }
+        } 
+      },
+      "editProfile":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type":"integer"
+          },
+          "avatar_id":{
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          }
+        }
+      },
+      "storyRead":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type":"integer"
+          },
+          "story_id":{
+            "type": "integer"
+          }
+        }
+      },
+      "storyFavourite":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type":"integer"
+          },
+          "story_id":{
+            "type": "integer"
+          }
+        }
+      },
+      "storyDetail":{
+        "type": "object",
+        "properties": {
+          "profile_id":{
+            "type":"integer"
+          },
+          "story_id":{
+            "type": "integer"
+          }
+        }
+      },
+      "Search":{
+        "type": "object",
+        "properties": {
+          "search_key":{
+            "type":"string"
+          }
+        }
+      },
+      "StoryLike":{
+        "type": "object",
+        "properties": {
+          "story_id":{
+            "type":"integer"
+          },
+          "profile_id":{
+            "type": "integer"
+          }
+        }
+      },
+      "StoryComment":{
+        "type": "object",
+        "properties": {
+          "story_id":{
+            "type":"integer"
+          },
+          "profile_id":{
+            "type": "integer"
+          },
+          "comment":{
+            "type": "string"
+          }
+        }
+      },
+      "StoryPoints":{
+        "type": "object",
+        "properties": {
+          "story_id":{
+            "type":"integer"
+          },
+          "comment":{
+            "type":"string"
+          },
+          "profile_id":{
+            "type": "integer"
+          },
+          "question_attempts":{
+            "type": "integer"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
